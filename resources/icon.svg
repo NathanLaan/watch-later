@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#2563eb"/>
+
+  <!-- TV body: rounded rectangle -->
+  <rect x="96" y="140" width="320" height="230" rx="20" ry="20" fill="#fff"/>
+
+  <!-- TV screen: inner rectangle -->
+  <rect x="116" y="160" width="280" height="190" rx="8" ry="8" fill="#2563eb"/>
+
+  <!-- TV stand -->
+  <rect x="130" y="352" width="25" height="36" rx="4" ry="4" fill="#fff"/>
+  <rect x="357" y="352" width="25" height="36" rx="4" ry="4" fill="#fff"/>
+
+  <!-- Download arrow shaft -->
+  <rect x="232" y="200" width="48" height="80" rx="4" ry="4" fill="#fff"/>
+
+  <!-- Download arrow head (triangle pointing down) -->
+  <polygon points="256,320 208,270 304,270" fill="#fff"/>
+
+</svg>
