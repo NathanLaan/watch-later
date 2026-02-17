@@ -10,7 +10,9 @@ files:
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
 asarUnpack:
   - '**/node_modules/ffmpeg-static/**'
+icon: build/icon.png
 linux:
+  icon: build/icon.png
   target:
     - AppImage
   category: Utility
