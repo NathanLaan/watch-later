@@ -25,6 +25,7 @@
     <span class="form-label">Save to:</span>
     <FolderPicker />
   </div>
+  <hr />
   <DownloadButton />
   <ProgressBar />
 
@@ -57,6 +58,11 @@
     flex-direction: column;
     gap: 16px;
     height: 100%;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
   }
 
   .form-grid {
