@@ -30,6 +30,8 @@ const api = {
 
   getDownloadFolder: (): Promise<string> => ipcRenderer.invoke('get-download-folder'),
 
+  openFolder: (folderPath: string): Promise<void> => ipcRenderer.invoke('open-folder', folderPath),
+
   onProgress: (callback: (progress: ProgressInfo) => void) => {
     const handler = (_event: Electron.IpcRendererEvent, progress: ProgressInfo): void =>
       callback(progress)

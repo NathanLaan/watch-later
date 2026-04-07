@@ -1,4 +1,4 @@
-import { ipcMain, dialog, app, BrowserWindow } from 'electron'
+import { ipcMain, dialog, app, shell, BrowserWindow } from 'electron'
 import { getFormats, downloadVideo, cancelDownload } from './ytdlp'
 
 let downloadFolder = app.getPath('downloads')
@@ -47,5 +47,9 @@ export function registerIpcHandlers(mainWindow: BrowserWindow): void {
 
   ipcMain.handle('get-download-folder', () => {
     return downloadFolder
+  })
+
+  ipcMain.handle('open-folder', (_event, folderPath: string) => {
+    shell.openPath(folderPath)
   })
 }

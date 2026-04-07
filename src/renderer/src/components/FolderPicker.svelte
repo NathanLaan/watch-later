@@ -12,6 +12,12 @@
       $downloadFolder = folder
     }
   }
+
+  function openFolder(): void {
+    if ($downloadFolder) {
+      window.api.openFolder($downloadFolder)
+    }
+  }
 </script>
 
 <div class="folder-picker">
@@ -21,6 +27,12 @@
     disabled={$downloadState === 'downloading'}
   >
     Change
+  </button>
+  <button
+    onclick={openFolder}
+    disabled={!$downloadFolder}
+  >
+    Open Folder
   </button>
 </div>
 
