@@ -56,4 +56,8 @@ export function registerIpcHandlers(mainWindow: BrowserWindow): void {
   ipcMain.handle('open-external', (_event, url: string) => {
     shell.openExternal(url)
   })
+
+  ipcMain.handle('get-app-version', () => {
+    return app.getVersion()
+  })
 }

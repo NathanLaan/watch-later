@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
   import UrlInput from './components/UrlInput.svelte'
   import ResolutionPicker from './components/ResolutionPicker.svelte'
   import FolderPicker from './components/FolderPicker.svelte'
@@ -7,6 +8,11 @@
 
   let dark = $state(false)
   let showAbout = $state(false)
+  let appVersion = $state('')
+
+  onMount(async () => {
+    appVersion = await window.api.getAppVersion()
+  })
 
   function toggleTheme(): void {
     dark = !dark
@@ -44,9 +50,9 @@
     <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <div class="modal" onclick={(e) => e.stopPropagation()} onkeydown={(e) => { if (e.key === 'Escape') showAbout = false }} role="dialog" aria-modal="true" tabindex="-1">
       <h2>Watch Later</h2>
-      <p class="version">Version 1.0.0</p>
+      <p class="version">Version {appVersion}</p>
       <p class="description">Download YouTube videos in MP4 format.</p>
-      <a class="github-link" href="https://github.com/NathanLaan/watch-later" onclick={(e) => { e.preventDefault(); window.api.openExternal('https://github.com/NathanLaan/watch-later') }}>GitHub</a>
+      <a class="github-link" href="https://github.com/NathanLaan/watch-later" onclick={(e) => { e.preventDefault(); window.api.openExternal('https://github.com/NathanLaan/watch-later') }}>Watch-Later Repository (GitHub)</a>
       <button class="close-btn" onclick={() => (showAbout = false)}>Close</button>
     </div>
   </div>

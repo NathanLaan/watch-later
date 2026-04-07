@@ -34,6 +34,8 @@ const api = {
 
   openExternal: (url: string): Promise<void> => ipcRenderer.invoke('open-external', url),
 
+  getAppVersion: (): Promise<string> => ipcRenderer.invoke('get-app-version'),
+
   onProgress: (callback: (progress: ProgressInfo) => void) => {
     const handler = (_event: Electron.IpcRendererEvent, progress: ProgressInfo): void =>
       callback(progress)
