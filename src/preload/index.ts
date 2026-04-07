@@ -32,6 +32,8 @@ const api = {
 
   openFolder: (folderPath: string): Promise<void> => ipcRenderer.invoke('open-folder', folderPath),
 
+  openExternal: (url: string): Promise<void> => ipcRenderer.invoke('open-external', url),
+
   onProgress: (callback: (progress: ProgressInfo) => void) => {
     const handler = (_event: Electron.IpcRendererEvent, progress: ProgressInfo): void =>
       callback(progress)

@@ -46,6 +46,7 @@
       <h2>Watch Later</h2>
       <p class="version">Version 1.0.0</p>
       <p class="description">Download YouTube videos in MP4 format.</p>
+      <a class="github-link" href="https://github.com/NathanLaan/watch-later" onclick={(e) => { e.preventDefault(); window.api.openExternal('https://github.com/NathanLaan/watch-later') }}>GitHub</a>
       <button class="close-btn" onclick={() => (showAbout = false)}>Close</button>
     </div>
   </div>
@@ -136,6 +137,17 @@
   .description {
     color: var(--text);
     font-size: 0.9rem;
+  }
+
+  .github-link {
+    color: var(--primary);
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .github-link:hover {
+    text-decoration: underline;
   }
 
   .close-btn {

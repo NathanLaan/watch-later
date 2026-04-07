@@ -21,6 +21,7 @@ declare global {
       selectDownloadFolder: () => Promise<string | null>
       getDownloadFolder: () => Promise<string>
       openFolder: (folderPath: string) => Promise<void>
+      openExternal: (url: string) => Promise<void>
       onProgress: (callback: (progress: ProgressInfo) => void) => () => void
       onComplete: (callback: (filePath: string) => void) => () => void
       onError: (callback: (error: string) => void) => () => void

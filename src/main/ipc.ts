@@ -52,4 +52,8 @@ export function registerIpcHandlers(mainWindow: BrowserWindow): void {
   ipcMain.handle('open-folder', (_event, folderPath: string) => {
     shell.openPath(folderPath)
   })
+
+  ipcMain.handle('open-external', (_event, url: string) => {
+    shell.openExternal(url)
+  })
 }
