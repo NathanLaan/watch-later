@@ -24,8 +24,8 @@
   "devDependencies": {
     "@electron-toolkit/eslint-config-ts": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
-    "electron": "^33.2.1",
-    "electron-builder": "^25.1.8",
+    "electron": "^41.3.0",
+    "electron-builder": "^26.8.1",
     "electron-vite": "^5.0.0",
     "svelte": "^5.16.0",
     "typescript": "^5.7.3"
